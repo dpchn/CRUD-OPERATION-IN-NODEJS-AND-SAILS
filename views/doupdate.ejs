@@ -1,0 +1,35 @@
+<html>
+<body>
+	<form action = '/update' method = 'POST' align = 'center'>
+	<table align='center'>
+	 	<tr>
+			<td>First Name</td> <td>: 
+			<td><input type = 'text' id = 'idfname' name = 'firstname' value = '<%= result.firstname %>' />
+		</tr>
+
+		<tr>
+			<td>Last Name
+			<td> : 
+			<td><input type = 'text' id = 'idlname' name = 'lastname' value = '<%= result.lastname %>' />
+		</tr>
+
+		<tr>
+			<td>Roll Number 
+			<td>: 
+			<td><input type = 'text' id = 'idroll' name = 'rollnumber'  value = '<%= result.rollnumber %>' />
+		</tr>
+
+		<tr>
+			<td>Email id
+			<td>: 
+			<td><input type = 'text' id = 'email' name = 'email' value = '<%= result.email %>' />
+		</tr>
+	</table>
+
+		<input type = 'submit' value = 'Update' />
+	</form>
+
+</html>
+
+
+

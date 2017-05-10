@@ -1,0 +1,53 @@
+
+
+
+<h1 align='center'>Details of All student</h1>
+
+<script type="text/javascript">
+	function update(n){
+		var r = confirm("Are you sure");
+    if(r==true){
+    	window.location.href = "/getforupdate/"+n+"";
+    }
+    else{
+    	window.location.href = "/show";
+    }   
+}
+
+function del(roll){
+    var r = confirm("Are you sure");
+    if(r==true){
+    	window.location.href = "/delete/"+roll+"";
+    }
+    else{
+    	window.location.href = "/show";
+    }
+}
+</script>
+<table border =1 align = 'center'>
+	
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Roll Number</th>
+	<th>Email Id</th>
+	
+	<th> Action</th>
+		<% for(var i=0; i<result.length; i++){ %>
+			 	<tr>	
+			 		
+			 		<td> <%= result[i].firstname %></td>
+			 		<td> <%= result[i].lastname %></td>
+			 		<td> <%= result[i].rollnumber %></td>
+			 		<td> <%= result[i].email %> </td>
+			 		<td> 
+					 <Button onClick=update('<%= result[i].rollnumber %>')>Update</Button>
+					 <Button onClick=del('<%= result[i].rollnumber %>')>Delete</Button>
+			 		</td>
+			 	</tr>	
+	<%	} %>
+	 
+ </table>
+
+<form action = '/addnew' method ="GET" align = 'center'>
+<input type ='Submit' value = 'ADD New Student'/>
+</form>
